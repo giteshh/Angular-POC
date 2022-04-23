@@ -1,1 +1,6 @@
-<p>child works!</p>
+<ol>
+  <li *ngFor="let food of foodArr, let i = index">
+    {{food}}
+    <button (click)="deleteItem(i)">Delete</button>
+  </li>
+</ol>
