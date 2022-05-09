@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AppService} from "./app.service";
 
 @Component({
   selector: 'app-root',
@@ -6,14 +7,21 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'poc';
   foods: string[] = [];
 
-  constructor() {
+
+
+  constructor(private appService: AppService){
+    this.addFood('');
   }
 
+  // addFood(foodItem: string) {
+  //   this.foods.push(foodItem);
+  // }
+
   addFood(foodItem: string) {
-    this.foods.push(foodItem);
+    this.appService.addItems('');
+    console.log(foodItem)
   }
 
   removeFood(indexFood: number) {
